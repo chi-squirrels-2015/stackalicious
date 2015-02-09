@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -18,6 +18,18 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <div class="container">
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
+    <% if current_user %>
+      <a href="/profile">My Secret Profile</a>
+      <a href="/users/<%= current_user.id %>">Public Profile</a>
+      <a href="/questions/new">Ask a new question</a>
+    <% else %>
+      <a href="/questions">View all the Questions</a>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>

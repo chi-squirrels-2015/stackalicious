@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Edit your question:</h1>
+  <form action="/questions/<%= @question.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <div>
+      <input type="text" name="question" placeholder="What do you want to ask?" value="<%= @question.question %>">
+    </div>
+    <div>
+      <input type="submit" value="update it!">
+    </div>
+  </form>
+  <form action="/questions/<%= @question.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="DELETE!">
+  </form>
+</div>

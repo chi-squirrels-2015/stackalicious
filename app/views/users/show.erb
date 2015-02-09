@@ -1,0 +1,15 @@
+<div class="container">
+  <h1><%= @user.name %> | <%= @user.email %></h1>
+  <div class="questions">
+    <h3><%= @user.name %>'s Questions:</h3>
+      <% @user.questions.each do |question| %>
+        <p><a href='/questions/<%= question.id%>'><%= question.question %></a></p>
+      <% end %>
+  </div>
+  <div class="answers">
+    <h3><%= @user.name %>'s answers:</h3>
+      <% @user.answers.each do |answer| %>
+        <p><%= answer.answer %></p>
+      <% end %>
+  </div>
+</div>

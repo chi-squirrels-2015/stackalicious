@@ -1,0 +1,18 @@
+<div class="container">
+  <h1><%= @question.question %> - <%= @question.creator.name %></h1>
+  <h4>Total Votes: <%= @question.votes.count %></h4>
+  <p>Answers: </p>
+  <% @question.answers.each do |answer| %>
+    <p><%= answer.answer %> - <%= answer.creator.name %></p>
+    <hr>
+  <% end %>
+  <% if current_user %>
+    <h2>Answer this question: </h2>
+    <form action="/questions/<%= @question.id %>/answers" method="post">
+      <textarea name="answer" rows="10" placeholder="Be nice when you answer a question..."></textarea>
+      <input type="submit" value="answer!">
+    </form>
+  <% end %>
+  <!-- <a href='/answer'>answer this question</a> -->
+  <a href='/questions/<%= @question.id %>/votes/new'>vote on this</a>
+</div>

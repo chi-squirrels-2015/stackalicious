@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Create an account:</h1>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+  <form action="/users" method="POST">
+    <input type="text" name="user[name]" placeholder="enter name" required>
+    <input type="text" name="user[email]" placeholder="enter email" required>
+    <input type="password" name="user[password]" placeholder="enter password" required>
+    <input type="submit" value="sign up!">
+  </form>
+</div>

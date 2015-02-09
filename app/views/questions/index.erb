@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Questions</h1>
+  <% @questions.each do |question| %>
+    <p><a href="/questions/<%= question.id %>"><%= question.question %> - <%= question.creator.name %></a></p>
+    <a href='/questions/<%= question.id %>/answers/new'>answer this question</a>
+    <a href='/questions/<%= question.id %>/votes/new'>vote on this</a>
+    <hr>
+  <% end %>
+</div>
