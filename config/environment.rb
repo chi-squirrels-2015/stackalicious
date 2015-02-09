@@ -13,6 +13,7 @@ require 'pathname'
 
 require 'pg'
 require 'active_record'
+require 'bcrypt'
 require 'logger'
 
 require 'sinatra'
